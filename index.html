@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siddhidata Dental Clinic | Dr. Uttirna Ghosh | Domjur, Howrah</title>
+  <meta name="description" content="Siddhidata Dental Clinic by Dr. Uttirna Ghosh in Domjur, Howrah. Expert dental care including extraction, root canal, implants & more. Call 6289087110." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #e8547a;
+      --pink-light: #fde8ef;
+      --pink-dark:  #c0335a;
+      --white:      #ffffff;
+      --off-white:  #fdf6f8;
+      --text-dark:  #1a1a2e;
+      --text-mid:   #4a4a6a;
+      --text-light: #7a7a9a;
+      --border:     #f0d0da;
+      --shadow:     0 4px 24px rgba(232,84,122,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--white); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 70px;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-icon {
+      width: 42px; height: 42px; background: var(--pink);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+    .nav-logo-text { line-height: 1.2; }
+    .nav-logo-text strong { display: block; font-family: 'Playfair Display', serif; font-size: 15px; color: var(--text-dark); }
+    .nav-logo-text span { font-size: 11px; color: var(--pink); font-weight: 500; letter-spacing: 0.5px; }
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-mid); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta {
+      background: var(--pink); color: white; border: none; padding: 10px 22px;
+      border-radius: 25px; font-size: 14px; font-weight: 600; cursor: pointer;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--pink-dark); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text-dark); border-radius: 2px; transition: 0.3s; }
+    .mobile-menu { display: none; }
+
+    /* ── HERO ── */
+    .hero {
+      margin-top: 70px;
+      min-height: calc(100vh - 70px);
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+    .hero-left { padding: 80px 5% 80px 8%; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--pink-light); color: var(--pink-dark);
+      font-size: 12px; font-weight: 600; letter-spacing: 1px;
+      padding: 6px 14px; border-radius: 20px; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-badge::before { content: '★'; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 1.18;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+    .hero h1 em { color: var(--pink); font-style: normal; }
+    .hero-sub {
+      font-size: 16px; color: var(--text-mid); line-height: 1.7;
+      margin-bottom: 36px; max-width: 460px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-primary {
+      background: var(--pink); color: white;
+      padding: 14px 30px; border-radius: 30px;
+      font-size: 15px; font-weight: 600;
+      text-decoration: none; transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(232,84,122,0.35);
+    }
+    .btn-primary:hover { background: var(--pink-dark); transform: translateY(-1px); }
+    .btn-outline {
+      border: 2px solid var(--pink); color: var(--pink);
+      padding: 14px 30px; border-radius: 30px;
+      font-size: 15px; font-weight: 600;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-outline:hover { background: var(--pink); color: white; }
+    .hero-stats { display: flex; gap: 36px; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--pink); font-weight: 700; }
+    .stat-label { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+    .hero-right { position: relative; height: 100%; min-height: 600px; overflow: hidden; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-card {
+      position: absolute; bottom: 40px; left: -30px;
+      background: white; border-radius: 16px;
+      padding: 18px 22px; box-shadow: var(--shadow);
+      display: flex; align-items: center; gap: 14px;
+      min-width: 220px;
+    }
+    .hero-card-icon { width: 48px; height: 48px; background: var(--pink-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .hero-card-text strong { display: block; font-size: 14px; color: var(--text-dark); }
+    .hero-card-text span { font-size: 12px; color: var(--text-light); }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 90px 8%; }
+    .section-tag {
+      display: inline-block;
+      color: var(--pink); font-size: 12px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--text-dark); line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .section-sub { font-size: 16px; color: var(--text-mid); max-width: 560px; line-height: 1.7; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--off-white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; margin-top: 60px; }
+    .about-images { position: relative; }
+    .about-img-main { width: 75%; border-radius: 20px; box-shadow: var(--shadow); display: block; }
+    .about-img-sub {
+      position: absolute; bottom: -30px; right: 0;
+      width: 48%; border-radius: 16px; box-shadow: var(--shadow);
+      border: 4px solid white;
+    }
+    .about-content { padding-bottom: 30px; }
+    .about-content p { color: var(--text-mid); line-height: 1.8; margin-bottom: 18px; font-size: 15px; }
+    .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 28px 0; }
+    .highlight-item {
+      background: white; border-radius: 12px; padding: 16px;
+      border-left: 3px solid var(--pink);
+      font-size: 13px; color: var(--text-mid); font-weight: 500;
+    }
+    .highlight-item strong { display: block; color: var(--text-dark); margin-bottom: 2px; font-size: 14px; }
+
+    /* ── SERVICES ── */
+    #services { background: white; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px; }
+    .service-card {
+      background: var(--off-white); border-radius: 18px;
+      padding: 32px 26px; transition: all 0.3s;
+      border: 1px solid transparent;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--pink); transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { border-color: var(--border); box-shadow: var(--shadow); transform: translateY(-4px); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon { font-size: 36px; margin-bottom: 16px; }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 10px; }
+    .service-card p { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+
+    /* ── GALLERY ── */
+    #gallery { background: var(--off-white); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 16px;
+      margin-top: 50px;
+    }
+    .gallery-item { border-radius: 14px; overflow: hidden; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-item.tall { grid-row: span 2; }
+    .gallery-item img { height: 260px; }
+    .gallery-item.tall img { height: 100%; min-height: 400px; }
+
+    /* ── POSTER ── */
+    #info { background: white; }
+    .poster-wrap { margin-top: 50px; text-align: center; }
+    .poster-wrap img { max-width: 620px; width: 100%; border-radius: 16px; box-shadow: var(--shadow); }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--pink); }
+    #testimonials .section-tag { color: var(--pink-light); }
+    #testimonials .section-title { color: white; }
+    #testimonials .section-sub { color: rgba(255,255,255,0.8); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+    .testi-card {
+      background: rgba(255,255,255,0.12); border-radius: 16px;
+      padding: 28px 24px; backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .testi-stars { color: #ffe066; font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+    .testi-text { color: white; font-size: 14px; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 10px; }
+    .testi-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: white; flex-shrink: 0;
+    }
+    .testi-name { color: white; font-weight: 600; font-size: 14px; }
+    .testi-loc { color: rgba(255,255,255,0.7); font-size: 12px; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--off-white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 50px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 24px; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+    .contact-item-icon {
+      width: 48px; height: 48px; background: var(--pink-light); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .contact-item-text strong { display: block; color: var(--text-dark); font-size: 14px; margin-bottom: 4px; }
+    .contact-item-text span { color: var(--text-mid); font-size: 14px; line-height: 1.5; }
+    .contact-item-text a { color: var(--pink); text-decoration: none; font-weight: 600; }
+
+    .contact-form { background: white; border-radius: 20px; padding: 36px; box-shadow: var(--shadow); }
+    .contact-form h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-dark); margin-bottom: 24px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-mid); margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 12px 16px;
+      border: 1.5px solid var(--border); border-radius: 10px;
+      font-family: 'Inter', sans-serif; font-size: 14px; color: var(--text-dark);
+      background: var(--off-white); outline: none; transition: border 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--pink); background: white; }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%; background: var(--pink); color: white;
+      border: none; padding: 14px; border-radius: 10px;
+      font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.2s;
+    }
+    .form-submit:hover { background: var(--pink-dark); }
+    .form-note { font-size: 12px; color: var(--text-light); text-align: center; margin-top: 10px; }
+
+    /* ── MAP ── */
+    .map-embed { margin-top: 50px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); }
+    .map-embed iframe { width: 100%; height: 380px; border: none; display: block; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--text-dark); color: white; padding: 60px 8% 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 40px; }
+    .footer-brand p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.7; margin-top: 14px; max-width: 300px; }
+    .footer-col h4 { color: var(--pink-light); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { color: rgba(255,255,255,0.65); font-size: 14px; text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--pink); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 13px; }
+    .footer-phone { color: var(--pink); font-weight: 600; font-size: 16px; text-decoration: none; }
+
+    /* ── FLOATING CALL BTN ── */
+    .float-call {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+      background: var(--pink); color: white;
+      width: 60px; height: 60px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; box-shadow: 0 6px 30px rgba(232,84,122,0.5);
+      text-decoration: none; transition: transform 0.2s;
+      animation: pulse 2s infinite;
+    }
+    .float-call:hover { transform: scale(1.1); animation: none; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 30px rgba(232,84,122,0.5); }
+      50% { box-shadow: 0 6px 40px rgba(232,84,122,0.8); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 60px 6%; order: 2; }
+      .hero-right { order: 1; min-height: 350px; }
+      .hero-card { display: none; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-img-sub { display: none; }
+      .about-img-main { width: 100%; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 60px 6%; }
+    }
+    @media (max-width: 580px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; }
+      .about-highlights { grid-template-columns: 1fr; }
+    }
+    .mobile-menu.open {
+      display: flex; flex-direction: column; align-items: center;
+      position: fixed; top: 70px; left: 0; right: 0;
+      background: white; padding: 20px;
+      gap: 18px; border-bottom: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      z-index: 99;
+    }
+    .mobile-menu.open a { color: var(--text-mid); font-size: 16px; text-decoration: none; font-weight: 500; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">🦷</div>
+    <div class="nav-logo-text">
+      <strong>Siddhidata Dental</strong>
+      <span>Dr. Uttirna Ghosh</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:6289087110" class="nav-cta">📞 Call Now</a>
+  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <a href="#about" onclick="this.parentElement.classList.remove('open')">About</a>
+  <a href="#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+  <a href="#gallery" onclick="this.parentElement.classList.remove('open')">Gallery</a>
+  <a href="#testimonials" onclick="this.parentElement.classList.remove('open')">Reviews</a>
+  <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+  <a href="tel:6289087110" class="btn-primary">📞 6289087110</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-left">
+    <div class="hero-badge">Trusted Dental Care · Domjur, Howrah</div>
+    <h1>Your <em>Healthy Smile</em><br>Is Our Priority</h1>
+    <p class="hero-sub">Experience gentle, expert dental care at Siddhidata Dental Clinic. Led by Dr. Uttirna Ghosh, we bring modern dentistry with a personal touch to every patient.</p>
+    <div class="hero-actions">
+      <a href="tel:6289087110" class="btn-primary">📞 Book Appointment</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Happy Patients</div>
+      </div>
+      <div>
+        <div class="stat-num">5★</div>
+        <div class="stat-label">Patient Rating</div>
+      </div>
+      <div>
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Services Offered</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="images/treatment1.jpg" alt="Dr. Uttirna Ghosh treating a patient" />
+    <div class="hero-card">
+      <div class="hero-card-icon">🏥</div>
+      <div class="hero-card-text">
+        <strong>Modern Clinic</strong>
+        <span>State-of-the-art equipment</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-images">
+      <img src="images/doctor.jpg" alt="Dr. Uttirna Ghosh" class="about-img-main" />
+      <img src="images/consultation.jpg" alt="Consultation at Siddhidata Dental" class="about-img-sub" />
+    </div>
+    <div class="about-content">
+      <div class="section-tag">About Us</div>
+      <h2 class="section-title">Meet Dr. Uttirna Ghosh</h2>
+      <p>Dr. Uttirna Ghosh is a dedicated and compassionate dental professional serving the communities of Domjur and Howrah. With a patient-first approach, she ensures every visit is comfortable, informed, and effective.</p>
+      <p>At Siddhidata Dental Clinic, we combine clinical expertise with genuine care — whether it's a routine check-up or a complex procedure, you're in safe hands.</p>
+      <div class="about-highlights">
+        <div class="highlight-item"><strong>BDS Qualified</strong>Certified dental surgeon</div>
+        <div class="highlight-item"><strong>Gentle Approach</strong>Anxiety-free treatments</div>
+        <div class="highlight-item"><strong>Modern Equipment</strong>Up-to-date dental tools</div>
+        <div class="highlight-item"><strong>All Ages Welcome</strong>Children to seniors</div>
+      </div>
+      <a href="tel:6289087110" class="btn-primary">Book a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-tag">What We Offer</div>
+  <h2 class="section-title">Our Dental Services</h2>
+  <p class="section-sub">From routine care to advanced treatments — all delivered with expertise and compassion.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🦷</div>
+      <h3>Tooth Extraction</h3>
+      <p>Safe and painless removal of damaged, infected, or wisdom teeth using modern techniques to minimize discomfort.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔬</div>
+      <h3>Root Canal Treatment</h3>
+      <p>Gentle root canal therapy to save infected teeth and relieve pain — performed with precision and care.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <h3>Teeth Whitening</h3>
+      <p>Professional whitening treatments to brighten your smile safely and effectively in a single visit.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <h3>Dental Fillings</h3>
+      <p>Tooth-coloured composite fillings that blend naturally with your teeth, restoring function and appearance.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">👑</div>
+      <h3>Crowns & Bridges</h3>
+      <p>Custom-made crowns and bridges to restore damaged or missing teeth and bring back your confident smile.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">😁</div>
+      <h3>Scaling & Cleaning</h3>
+      <p>Professional dental cleaning to remove plaque and tartar buildup, keeping your gums healthy and fresh.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🧒</div>
+      <h3>Paediatric Dentistry</h3>
+      <p>Child-friendly dental care in a warm, calming environment — making dentistry fun and fear-free for kids.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>Dental Consultation</h3>
+      <p>Thorough assessment of your oral health with personalised advice and a clear treatment plan tailored for you.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🩺</div>
+      <h3>Pre-Surgical Blood Tests</h3>
+      <p>In-house guidance on required blood tests before extractions to ensure your safety and smooth recovery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-tag">Inside Our Clinic</div>
+  <h2 class="section-title">A Glimpse of Our Care</h2>
+  <p class="section-sub">Real moments from our clinic — warm, professional, and patient-focused.</p>
+  <div class="gallery-grid">
+    <div class="gallery-item tall">
+      <img src="images/clinic-room.jpg" alt="Siddhidata Dental Clinic treatment room" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/treatment2.jpg" alt="Dr. Uttirna treating a patient" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/patient-child.jpg" alt="Happy young patient" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/consultation.jpg" alt="Doctor consultation" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/patient-elder.jpg" alt="Happy senior patient with Dr. Uttirna" />
+    </div>
+  </div>
+</section>
+
+<!-- INFO POSTER -->
+<section id="info">
+  <div class="section-tag">Patient Education</div>
+  <h2 class="section-title">Why Blood Tests Before Extraction?</h2>
+  <p class="section-sub">We believe in keeping our patients informed. Here's a helpful guide on pre-extraction blood tests — your safety is our top priority.</p>
+  <div class="poster-wrap">
+    <img src="images/services-poster.png" alt="Blood test guide before dental extraction - Siddhidata Polyclinic" />
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-tag">Patient Reviews</div>
+  <h2 class="section-title">What Our Patients Say</h2>
+  <p class="section-sub">Trusted by families across Domjur and Howrah.</p>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Dr. Uttirna is so gentle and patient. My root canal was completely painless. I was very scared before but she made me feel at ease throughout."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div>
+          <div class="testi-name">Priya Mondal</div>
+          <div class="testi-loc">Domjur, Howrah</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Brought my son here for the first time and he wasn't even scared! The doctor was so kind with him. The clinic is clean and well-equipped."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👨</div>
+        <div>
+          <div class="testi-name">Raju Das</div>
+          <div class="testi-loc">Jhapardah, Howrah</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Very professional and caring doctor. She explained everything clearly before the procedure. My tooth extraction was quick and I had no pain after."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div>
+          <div class="testi-name">Sunita Sharma</div>
+          <div class="testi-loc">Domjur, Howrah</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-tag">Get In Touch</div>
+  <h2 class="section-title">Visit Us or Book a Call</h2>
+  <p class="section-sub">We're here Mon–Sat. Walk-ins welcome, appointments preferred.</p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div class="contact-item-text">
+          <strong>Address</strong>
+          <span>Tentultala, South Jhapardah,<br>Domjur, Howrah, West Bengal</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📞</div>
+        <div class="contact-item-text">
+          <strong>Phone</strong>
+          <span><a href="tel:6289087110">6289087110</a> — Call or WhatsApp</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">🕐</div>
+        <div class="contact-item-text">
+          <strong>Clinic Hours</strong>
+          <span>Monday – Saturday: 10:00 AM – 7:00 PM<br>Sunday: Closed</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">🚌</div>
+        <div class="contact-item-text">
+          <strong>How to Reach</strong>
+          <span>Easily accessible from Domjur Bus Stand and South Jhapardah area</span>
+        </div>
+      </div>
+      <a href="tel:6289087110" class="btn-primary" style="width:fit-content;">📞 Call 6289087110</a>
+      <a href="https://wa.me/916289087110" target="_blank" class="btn-outline" style="width:fit-content;">💬 WhatsApp Us</a>
+    </div>
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Enter your full name" />
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Your mobile number" />
+      </div>
+      <div class="form-group">
+        <label>Service Needed</label>
+        <select>
+          <option value="">Select a service</option>
+          <option>Tooth Extraction</option>
+          <option>Root Canal Treatment</option>
+          <option>Teeth Whitening</option>
+          <option>Dental Filling</option>
+          <option>Crowns & Bridges</option>
+          <option>Scaling & Cleaning</option>
+          <option>Paediatric Dentistry</option>
+          <option>General Consultation</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message (Optional)</label>
+        <textarea placeholder="Tell us about your dental concern..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleForm()">Send Message</button>
+      <p class="form-note">We'll call you back within a few hours during clinic hours.</p>
+    </div>
+  </div>
+  <!-- Google Map embed for Domjur, Howrah area -->
+  <div class="map-embed">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.7!2d88.21!3d22.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDomjur%2C+Howrah%2C+West+Bengal!5e0!3m2!1sen!2sin!4v1"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Siddhidata Dental Clinic location map">
+    </iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <div style="width:38px;height:38px;background:var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;">🦷</div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;">Siddhidata Dental Clinic</div>
+          <div style="font-size:11px;color:var(--pink);font-weight:500;">Dr. Uttirna Ghosh</div>
+        </div>
+      </div>
+      <p>Providing trusted, compassionate dental care to families across Domjur and Howrah. Your healthy smile is our greatest reward.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Doctor</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Patient Reviews</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:6289087110">📞 6289087110</a></li>
+        <li><a href="https://wa.me/916289087110">💬 WhatsApp</a></li>
+        <li><a href="#contact">📍 Domjur, Howrah</a></li>
+        <li><a href="#contact">🕐 Mon–Sat 10AM–7PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Siddhidata Dental Clinic · Domjur, Howrah · All rights reserved</p>
+    <a href="tel:6289087110" class="footer-phone">📞 6289087110</a>
+  </div>
+</footer>
+
+<!-- Floating Call Button -->
+<a href="tel:6289087110" class="float-call" title="Call Now">📞</a>
+
+<script>
+  function handleForm() {
+    const name = document.querySelector('.contact-form input[type="text"]').value.trim();
+    const phone = document.querySelector('.contact-form input[type="tel"]').value.trim();
+    if (!name || !phone) {
+      alert('Please fill in your name and phone number.');
+      return;
+    }
+    alert('Thank you, ' + name + '! We\'ll call you back at ' + phone + ' shortly. 😊');
+  }
+
+  // Smooth scroll for all nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
